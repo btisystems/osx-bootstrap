@@ -4,25 +4,32 @@
    - caskroom/versions
    - homebrew/versions
    - homebrew/binary
-   # - homebrew/php
 
  homebrew_packages:
   - { name: brew-cask }
-  - { name: git-flow }
-  - { name: nkf }
+  - { name: git }
+  - { name: git-extras }
+  - { name: svn }
   - { name: tmux }
+  - { name: hh }
+  - { name: whatmask }
+  - { name: htop }
+  - { name: the_silver_searcher }
+  - { name: ctags }
+  - { name: autojump }
+  - { name: bash-completion }
+  - { name: ssh-copy-id }
+  - { name: tiff2png }
+  - { name: xz }
+  - { name: watch }
   - { name: tree }
   - { name: pstree }
-  - { name: mecab }
-  - { name: mecab-ipadic }
   - { name: zsh }
   - { name: zsh-completions }
   - { name: jq }
   - { name: coreutils }
   - { name: moreutils }
   - { name: nmap }
-  - { name: reattach-to-user-namespace }
-  - { name: heroku-toolbelt }
   - { name: vim,
       install_options: with-lua }
   - { name: wget,
