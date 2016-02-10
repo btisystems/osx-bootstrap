@@ -7,10 +7,13 @@
 
  homebrew_packages:
   - { name: brew-cask }
+  - { name: ansible }
   - { name: git }
   - { name: git-extras }
   - { name: svn }
   - { name: tmux }
+  - { name: maven }
+  - { name: gradle }
   - { name: hh }
   - { name: whatmask }
   - { name: htop }
