@@ -1,5 +1,6 @@
 ---
  homebrew_cask_packages:
+  - atom
   - appcleaner
   - caffeine
   - dropbox
@@ -15,7 +16,6 @@
   - vlc
   - chicken
   - cyberduck
-  - java7
   - the-unarchiver
   - qlstephen
   - qlmarkdown
