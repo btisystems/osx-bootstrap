@@ -12,8 +12,6 @@
   - { name: git-extras }
   - { name: svn }
   - { name: tmux }
-  - { name: maven }
-  - { name: gradle }
   - { name: hh }
   - { name: whatmask }
   - { name: htop }
