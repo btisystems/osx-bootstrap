@@ -7,3 +7,11 @@
     - homebrew
     - homebrew-cask
     - java
+- hosts: osx
+  connection: ssh
+  gather_facts: no
+  become: no
+  roles:
+    - homebrew
+    - homebrew-cask
+    - java
