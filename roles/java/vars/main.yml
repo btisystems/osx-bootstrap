@@ -1,0 +1,5 @@
+---
+jdks:
+  - java                                     # Java 8
+  - java7                                    # Java 7
+  - java6                                    # Java 6

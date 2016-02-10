@@ -1,0 +1,33 @@
+---
+- name: "Install jenv"
+  homebrew: name=jenv state=present
+
+- name: "Install JDKs"
+  homebrew_cask: name={{ item }} state=present
+  with_items: jdks
+
+- name: "Update bash profile"
+  lineinfile: state=present create=yes dest='~/.bash_profile' line='if which jenv > /dev/null; then eval "$(jenv init -)"; fi'
+
+- name: "Get available JDKs"
+  shell: "ls /Library/Java/JavaVirtualMachines/"
+  register: jvms
+  ignore_errors: yes
+  changed_when: False
+
+- name: "Register JDKs"
+  shell: "jenv add /Library/Java/JavaVirtualMachines/{{ item }}/Contents/Home || true"
+  with_items: jvms.stdout_lines
+  ignore_errors: yes
+  register: result
+  changed_when: "'already' not in result.stdout"
+
+- name: "Installs shims for all JDKs"
+  shell: "jenv rehash"
+  changed_when: False
+
+- name: "Install Maven"
+  homebrew: name=maven state=present
+
+- name: "Install Gradle"
+  homebrew: name=gradle state=present
