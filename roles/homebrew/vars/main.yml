@@ -29,6 +29,8 @@
   - { name: coreutils }
   - { name: moreutils }
   - { name: nmap }
+  - { name: rpm }
+  - { name: tig }
   - { name: vim,
       install_options: with-lua }
   - { name: wget,
