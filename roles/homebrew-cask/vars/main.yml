@@ -8,7 +8,6 @@
   - firefox
   - iterm2
   - virtualbox
-  - dash
   - xquartz
   - sequel-pro
   - skype
@@ -25,4 +24,4 @@
   - qlprettypatch
   - qlimagesize
   - dockertoolbox
-
+  - intellij-idea-ce

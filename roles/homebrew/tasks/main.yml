@@ -1,4 +1,13 @@
 ---
+ - name: Check homebrew installed or not
+   command: "[ -e /usr/local/bin/brew ]"
+   register: homebrew_installed
+   ignore_errors: yes
+
+ - name: Installing homebrew
+   raw: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   when: homebrew_installed|failed
+
  - name: Update and Upgrade all
    homebrew:
      update_homebrew: yes
