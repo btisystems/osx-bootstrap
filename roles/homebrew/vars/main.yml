@@ -17,8 +17,7 @@
   - { name: htop }
   - { name: the_silver_searcher }
   - { name: ctags }
-  - { name: autojump }
-  - { name: bash-completion }
+  - { name: fasd }
   - { name: ssh-copy-id }
   - { name: tiff2png }
   - { name: xz }

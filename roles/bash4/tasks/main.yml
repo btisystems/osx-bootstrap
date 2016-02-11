@@ -1,0 +1,10 @@
+---
+- homebrew: name=bash state=present
+- homebrew: name=bash-completion2 state=present
+
+- lineinfile: dest=/etc/shells line=/usr/local/bin/bash
+
+# Now, we want to set bash4 as the default shell, unless it is already the default
+# one.
+- name: Make BASH 4 default
+  shell:  chsh -s /usr/local/bin/bash
