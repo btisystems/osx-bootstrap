@@ -10,8 +10,10 @@
   - { name: ansible }
   - { name: git }
   - { name: git-extras }
+  - { name: git-stats }
   - { name: svn }
   - { name: tmux }
+  - { name: ngrep }
   - { name: hh }
   - { name: whatmask }
   - { name: htop }
