@@ -1,0 +1,13 @@
+---
+- name: Create dotfiles directory
+  file:
+    path: "{{ dotfiles_path }}"
+    state: directory
+
+- name: Clone dotfiles
+  git:
+    repo: "{{ dotfiles_url }}"
+    dest: "{{ dotfiles_path }}"
+
+- name: Bootstrap dotfiles
+  shell: /Users/damianoneill/project/dotfiles/bootstrap.sh -f 
