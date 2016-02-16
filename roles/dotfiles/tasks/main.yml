@@ -10,4 +10,7 @@
     dest: "{{ dotfiles_path }}"
 
 - name: Bootstrap dotfiles
-  shell: /Users/damianoneill/project/dotfiles/bootstrap.sh -f 
+  shell: "{{ dotfiles_path }}/bootstrap.sh -f"
+
+- name: Setup OSX Defaults
+  shell: ~/.osx
