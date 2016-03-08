@@ -10,7 +10,7 @@
   - { name: ansible }
   - { name: git }
   - { name: git-extras }
-  - { name: git-stats }
+#  - { name: git-stats }
   - { name: svn }
   - { name: tmux }
   - { name: ngrep }
