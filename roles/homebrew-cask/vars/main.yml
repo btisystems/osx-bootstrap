@@ -7,7 +7,6 @@
   - google-chrome
   - firefox
   - iterm2
-  - virtualbox
   - xquartz
   - sequel-pro
   - skype
@@ -25,7 +24,7 @@
   - qlimagesize
   - betterzipql
   - webpquicklook
-  - suspicious-package
+#  - suspicious-package //Appears broken as of Mar 8 2016
   - dockertoolbox
   - intellij-idea-ce
   - basictex
