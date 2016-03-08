@@ -7,6 +7,6 @@
     - homebrew
     - homebrew-cask
     - java
+    - private
     - bash4
     - dotfiles
-    - private
