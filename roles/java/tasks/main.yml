@@ -6,8 +6,17 @@
   homebrew_cask: name={{ item }} state=present
   with_items: jdks
 
-- name: "Update bash profile"
-  lineinfile: state=present create=yes dest='~/.bash_profile' line='if which jenv > /dev/null; then eval "$(jenv init -)"; fi'
+- name: "Add jenv to the $PATH"
+ lineinfile: dest="{{ local_home }}/.bash_profile"
+             line='export PATH="$HOME/.jenv/bin:$PATH"'
+             state=present
+             create=True
+
+- name: "Add jenv to the shell"
+ lineinfile: dest="{{ local_home }}/.bash_profile"
+             line='if which jenv > /dev/null; then eval "$(jenv init -)"; fi'
+             state=present
+             create=True
 
 - name: "Get available JDKs"
   shell: "ls /Library/Java/JavaVirtualMachines/"
@@ -31,3 +40,15 @@
 
 - name: "Install Gradle"
   homebrew: name=gradle state=present
+
+- name: "Configure MAVEN_OPTS"
+ lineinfile: dest="{{ local_home }}/.bash_profile"
+             line='export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=512m"'
+             state=present
+             create=True
+
+- name: "Configure ANT_OPTS"
+ lineinfile: dest="{{ local_home }}/.bash_profile"
+             line='export ANT_OPTS="-Xmx2g -Xms512m -XX:MaxPermSize=512m"'
+             state=present
+             create=True
