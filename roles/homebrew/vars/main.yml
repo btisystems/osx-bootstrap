@@ -36,3 +36,4 @@
       install_options: with-lua }
   - { name: wget,
       install_options: enable-iri }
+  - { name: ncdu }
