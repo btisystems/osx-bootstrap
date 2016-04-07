@@ -1,0 +1,8 @@
+---
+ fonts_tap:
+  - caskroom/fonts 
+ private_apps:
+  - spotify
+  - netbeans
+  - font-source-code-pro
+  - slack

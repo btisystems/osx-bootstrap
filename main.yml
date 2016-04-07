@@ -4,8 +4,9 @@
   gather_facts: no
   become: no
   roles:
-    #- homebrew
-    #- homebrew-cask
-    #- java
-    #- bash4
+    - homebrew
+    - homebrew-cask
+    - java
+    - private
+    - bash4
     - dotfiles
