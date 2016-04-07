@@ -37,3 +37,4 @@
   - { name: wget,
       install_options: enable-iri }
   - { name: ant }
+  - { name: ncdu }
