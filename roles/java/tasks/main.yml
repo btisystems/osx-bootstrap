@@ -7,13 +7,13 @@
   with_items: jdks
 
 - name: "Add jenv to the $PATH"
- lineinfile: dest="{{ local_home }}/.bash_profile"
+  lineinfile: dest="{{ local_profile }}"
              line='export PATH="$HOME/.jenv/bin:$PATH"'
              state=present
              create=True
 
 - name: "Add jenv to the shell"
- lineinfile: dest="{{ local_home }}/.bash_profile"
+  lineinfile: dest="{{ local_profile }}"
              line='if which jenv > /dev/null; then eval "$(jenv init -)"; fi'
              state=present
              create=True
@@ -42,13 +42,13 @@
   homebrew: name=gradle state=present
 
 - name: "Configure MAVEN_OPTS"
- lineinfile: dest="{{ local_home }}/.bash_profile"
+  lineinfile: dest="{{ local_profile }}"
              line='export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=512m"'
              state=present
              create=True
 
 - name: "Configure ANT_OPTS"
- lineinfile: dest="{{ local_home }}/.bash_profile"
+  lineinfile: dest="{{ local_profile }}"
              line='export ANT_OPTS="-Xmx2g -Xms512m -XX:MaxPermSize=512m"'
              state=present
              create=True
