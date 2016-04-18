@@ -4,5 +4,5 @@ jdks:
   - java7                                    # Java 7
 
 local_home: "{{ lookup('env','HOME') }}"
-local_profile: "{{ local_home }}.bash_profile"
+local_profile: "{{ local_home }}/.bash_profile"
 #local_profile: "/Users/username/.bash_profile"

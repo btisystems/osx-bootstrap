@@ -53,14 +53,14 @@
              state=present
              create=True
 
-- name: "Configure jenv maven plugin"
-  shell: "jenv enable-plugin maven"
-  changed_when: False
-
-- name: "Configure jenv ant plugin"
-  shell: "jenv enable-plugin ant"
-  changed_when: False
-
-- name: "Configure jenv sbt plugin"
-  shell: "jenv enable-plugin sbt"
-  changed_when: False
+#- name: "Configure jenv maven plugin"
+#  shell: "jenv enable-plugin maven"
+#  changed_when: False
+#
+#- name: "Configure jenv ant plugin"
+#  shell: "jenv enable-plugin ant"
+#  changed_when: False
+#
+#- name: "Configure jenv sbt plugin"
+#  shell: "jenv enable-plugin sbt"
+#  changed_when: False
