@@ -6,7 +6,7 @@
   roles:
     - homebrew
     - homebrew-cask
-    - private
     - bash4
     - java
+    - private
     - dotfiles
