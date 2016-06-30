@@ -7,7 +7,7 @@
 
 - name: "Register JDKs"
   shell: "jenv add /Library/Java/JavaVirtualMachines/{{ item }}/Contents/Home || true"
-  with_items: jvms.stdout_lines
+  with_items: "{{jvms.stdout_lines}}"
   ignore_errors: yes
   register: result
   changed_when: "'already' not in result.stdout"
