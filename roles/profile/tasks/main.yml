@@ -1,0 +1,60 @@
+---
+- name: "Add jenv to the $PATH"
+  lineinfile: dest="{{ local_profile }}"
+             line='export PATH="$HOME/.jenv/bin:$PATH"'
+             state=present
+             create=True
+
+- name: "Add jenv to the shell"
+  lineinfile: dest="{{ local_profile }}"
+             line='if which jenv > /dev/null; then eval "$(jenv init -)"; fi'
+             state=present
+             create=True
+
+- name: "Configure MAVEN_OPTS"
+  lineinfile: dest="{{ local_profile }}"
+             line='export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=512m"'
+             state=present
+             create=True
+
+- name: "Configure ANT_OPTS"
+  lineinfile: dest="{{ local_profile }}"
+             line='export ANT_OPTS="-Xmx2g -Xms512m -XX:MaxPermSize=512m"'
+             state=present
+             create=True
+
+- name: "Register $JAVA_HOME via jenv"
+  shell: "source ~/.bash_profile && jenv enable-plugin export"
+  changed_when: False
+
+- name: "Configure jenv maven plugin"
+  shell: "source ~/.bash_profile && jenv enable-plugin maven"
+  changed_when: False
+
+- name: "Configure jenv ant plugin"
+  shell: "source ~/.bash_profile && jenv enable-plugin ant"
+  changed_when: False
+
+- name: "Configure jenv sbt plugin"
+  shell: "source ~/.bash_profile && jenv enable-plugin sbt"
+  changed_when: False
+
+- name: "Configure jenv gradle plugin"
+  shell: "source ~/.bash_profile && jenv enable-plugin gradle"
+  changed_when: False
+
+- name: "Configure jenv global as 1.7"
+  shell: "source ~/.bash_profile && jenv global 1.7"
+  changed_when: False
+
+# Editing this file requires the --ask-become-pass option to be set!
+- name: "Add bash4 to the list of shells"
+  become: yes
+  lineinfile: dest=/etc/shells line=/usr/local/bin/bash
+
+- name: "Make BASH 4 default shell"
+  shell: "chsh -s /usr/local/bin/bash"
+
+# This script kill the running terminal application!
+- name: Setup OSX Defaults
+  shell: "~/.osx"

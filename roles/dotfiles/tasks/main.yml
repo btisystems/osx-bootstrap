@@ -12,5 +12,3 @@
 - name: Bootstrap dotfiles
   shell: "{{ dotfiles_path }}/bootstrap.sh -f"
 
-- name: Setup OSX Defaults
-  shell: ~/.osx

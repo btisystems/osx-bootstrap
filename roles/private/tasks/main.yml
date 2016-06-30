@@ -3,10 +3,10 @@
    homebrew_tap:
      tap: "{{ item }}"
      state: present
-   with_items: fonts_tap
+   with_items: "{{fonts_tap}}"
 
  - name: Private cask installs
    homebrew_cask:
      name: "{{ item }}"
      state: present
-   with_items: private_apps
+   with_items: "{{private_apps}}"
