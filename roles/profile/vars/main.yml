@@ -1,0 +1,3 @@
+---
+local_home: "{{ lookup('env','HOME') }}"
+local_profile: "{{ local_home }}/.bash_profile"

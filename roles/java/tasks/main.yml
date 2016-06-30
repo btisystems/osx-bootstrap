@@ -6,61 +6,8 @@
   homebrew_cask: name={{ item }} state=present
   with_items: jdks
 
-- name: "Add jenv to the $PATH"
-  lineinfile: dest="{{ local_profile }}"
-             line='export PATH="$HOME/.jenv/bin:$PATH"'
-             state=present
-             create=True
-
-- name: "Add jenv to the shell"
-  lineinfile: dest="{{ local_profile }}"
-             line='if which jenv > /dev/null; then eval "$(jenv init -)"; fi'
-             state=present
-             create=True
-
-- name: "Get available JDKs"
-  shell: "ls /Library/Java/JavaVirtualMachines/"
-  register: jvms
-  ignore_errors: yes
-  changed_when: False
-
-- name: "Register JDKs"
-  shell: "jenv add /Library/Java/JavaVirtualMachines/{{ item }}/Contents/Home || true"
-  with_items: jvms.stdout_lines
-  ignore_errors: yes
-  register: result
-  changed_when: "'already' not in result.stdout"
-
-- name: "Installs shims for all JDKs"
-  shell: "jenv rehash"
-  changed_when: False
-
 - name: "Install Maven"
   homebrew: name=maven state=present
 
 - name: "Install Gradle"
   homebrew: name=gradle state=present
-
-- name: "Configure MAVEN_OPTS"
-  lineinfile: dest="{{ local_profile }}"
-             line='export MAVEN_OPTS="-Xmx4096m -XX:MaxPermSize=512m"'
-             state=present
-             create=True
-
-- name: "Configure ANT_OPTS"
-  lineinfile: dest="{{ local_profile }}"
-             line='export ANT_OPTS="-Xmx2g -Xms512m -XX:MaxPermSize=512m"'
-             state=present
-             create=True
-
-#- name: "Configure jenv maven plugin"
-#  shell: "jenv enable-plugin maven"
-#  changed_when: False
-#
-#- name: "Configure jenv ant plugin"
-#  shell: "jenv enable-plugin ant"
-#  changed_when: False
-#
-#- name: "Configure jenv sbt plugin"
-#  shell: "jenv enable-plugin sbt"
-#  changed_when: False

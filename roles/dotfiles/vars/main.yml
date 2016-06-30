@@ -1,4 +1,4 @@
 ---
-src_path: "~/project"
+src_path: "~/Projects"
 dotfiles_path: "{{ src_path }}/dotfiles"
 dotfiles_url: "https://github.com/btisystems/dotfiles.git"

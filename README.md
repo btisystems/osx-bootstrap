@@ -17,3 +17,9 @@ $ brew install ansible
 ```
 ansible-playbook main.yml
 ```
+
+After this completes, the terminal will be killed.  To complete the install run:
+
+```
+ansible-playbook post.yml
+```
