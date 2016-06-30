@@ -36,7 +36,9 @@
 # See https://github.com/ansible/ansible/issues/13872
 ###############################################################
 
-- lineinfile: dest=/etc/shells line=/usr/local/bin/bash
+- name: "Add bash4 to the list of shells"
+  become: yes
+  lineinfile: dest=/etc/shells line=/usr/local/bin/bash
 
 # Now, we want to set bash4 as the default shell, unless it is already the default
 # one.
