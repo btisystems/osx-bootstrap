@@ -16,10 +16,10 @@
   shell: "jenv rehash"
   changed_when: False
 
-- name: "Register $JAVA_HOME via jenv"
-  shell: "jenv enable-plugin export"
-  changed_when: False
-
+#- name: "Register $JAVA_HOME via jenv"
+#  shell: "jenv enable-plugin export"
+#  changed_when: False
+#
 #- name: "Configure jenv maven plugin"
 #  shell: "jenv enable-plugin maven"
 #  changed_when: False
