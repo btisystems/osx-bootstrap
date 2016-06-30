@@ -4,7 +4,7 @@
 
 - name: "Install JDKs"
   homebrew_cask: name={{ item }} state=present
-  with_items: jdks
+  with_items: "{{jdks}}"
 
 - name: "Install Maven"
   homebrew: name=maven state=present
