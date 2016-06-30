@@ -4,10 +4,10 @@
   gather_facts: no
   become: no
   roles:
-#    - homebrew
-#    - homebrew-cask
-#    - bash4
-#    - java
-#    - private
-#    - dotfiles
+    - homebrew
+    - homebrew-cask
+    - bash4
+    - java
+    - private
+    - dotfiles
     - profile
